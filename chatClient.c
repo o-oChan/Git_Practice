@@ -8,7 +8,7 @@
 #include <netdb.h>
 #include <errno.h>
 
-#define PORT 25914
+#define PORT 2222
 #define BUFFER_SIZE 1024
 
 int sock = 0;
