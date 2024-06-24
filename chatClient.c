@@ -81,6 +81,25 @@ int main(int argc, char *argv[]) {
     fd_set readfds;
     int max_sd = (sock > STDIN_FILENO) ? sock : STDIN_FILENO;
 
+// Main loop: Process data from input and socket
+    while (1) {
+        FD_ZERO(&readfds);
+        FD_SET(sock, &readfds);
+        FD_SET(STDIN_FILENO, &readfds);
+
+        int activity = select(max_sd + 1, &readfds, NULL, NULL, NULL);
+
+        if ((activity < 0) && (errno != EINTR)) {
+            perror("select error");
+        }
+
+        // (1)번 작성 줄
+       
+
+        // (2)번 작성 줄
+    }
+
+
     close(sock);
     return 0;
 }
