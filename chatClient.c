@@ -1,3 +1,20 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <unistd.h>
+#include <arpa/inet.h>
+#include <signal.h>
+#include <sys/select.h>
+#include <netdb.h>
+#include <errno.h>
+
+#define PORT 2222
+#define BUFFER_SIZE 1024
+
+int sock = 0;
+
+
+
 void handle_signal(int sig) {
     if (sig == SIGINT) {
         printf("\ngg~\n");
@@ -67,3 +84,4 @@ int main(int argc, char *argv[]) {
     close(sock);
     return 0;
 }
+
