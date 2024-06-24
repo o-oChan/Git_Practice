@@ -80,4 +80,8 @@ int main(int argc, char *argv[]) {
 
     fd_set readfds;
     int max_sd = (sock > STDIN_FILENO) ? sock : STDIN_FILENO;
+
+    close(sock);
+    return 0;
 }
+
